@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Yellowtail&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  <link rel="icon" href="./images/olxbrowserlogo.jpg">
+  <!-- Load an icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Thapar Connect</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin:0;
+        margin-left: 180px;
+        padding: 0;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 5px;
+        text-align: center;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+
+    .product {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        display: inline-block;
+        width:80%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        margin-left: 100px;
+    }
+
+    .product img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product h2 {
+        font-size: 18px;
+    }
+
+    .product p {
+        font-size: 14px;
+    }
+    
+    #list1{
+      padding: 10px;
+      margin: 10px;
+    }
+
+    #personDetails
+    {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: inline-table;
+        padding: 10px;
+        width: auto;
+        height: auto;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        position: relative;
+        left: 100px;
+        margin-bottom: 20px;
+    }
+    #form1{
+        margin: 5%;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+<!-- The sidebar -->
+<div class="sidebar">
+  <a href="./main.html"><i class="fa fa-fw fa-home"></i> Home</a>
+  <a href="acc.html"><i class="fa fa-fw fa-wrench"></i> My Account</a>
+  <a href="fav.html"><i class="fa fa-fw fa-user"></i> Favourites</a>
+  <a href="login.html"><i class="fa fa-fw fa-envelope"></i> Sign out</a>
+</div>
+
+
+  <nav class="header container-fluid">
+    <div class="nav-bar container">
+
+
+      <!-- ===toogle=== -->
+
+        <div class="toogle1 col col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="second-nav row">
+
+              <div class="search3">
+                <input type="text" class="searchclass" id="s" placeholder="Find something...">
+                <button id="bs" ><i class="fa fa-search"></i></button>
+              </div>
+
+
+              <div class="col col-3 col-sm-3 col-md-2 col-lg-2" style="position: absolute; right: 100px;">
+                <div class="selling_page" onclick="sell()">
+                  <button>
+                    <i class="fa-solid fa-plus "></i>
+                    <p>SELL</p>
+                  </button>
+                </div>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#olxNavbar"><span
+                    class="navbar-toggler-icon"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+  </nav>
+  
+  <div id = "spec"></div>
+  <div id="chatPopup" style="display: none;">
+    <div id="chatContainer">
+    </div>
+    <form id="chatForm">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button type="submit" id="sendMessageBtn">Send</button>
+    </form>
+</div>
+
+<button id="openChatBtn">Chat</button>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<footer>
+  <div class="footer2 container-fluid" style="padding-left: 300px;">
+    <div class="container">
+      <div class="row">
+        <div class="footer2content col col-6 col-sm-4 col-md-2">
+          <h5 class="mt-3"><a href="https://www.thapar.edu/" style="text-decoration: none; color: rgb(0, 98, 98);">Contact Us</a></h5>
+        </div>
+        <div class="footer2content col col-6 col-sm-4 col-md-2">
+          <h5 class="mt-3"><a href="https://www.thapar.edu/" style="text-decoration: none; color: rgb(0, 98, 98);">About Us</a></h5>
+        </div>
+        <div class="footer2content col col-6 col-sm-4 col-md-3">
+          <h5 class="mt-3"><a href="https://www.thapar.edu/" style="text-decoration: none; color: rgb(0, 98, 98);">Thapar Site</a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+
+
+
+  <script>
+        //to show specific item
+    document.addEventListener('DOMContentLoaded', async () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const itemName = urlParams.get(`name`);
+
+        const dets = `http://localhost:8080/dets?name=${itemName}`; 
+
+        try {
+            const response = await fetch(dets);
+            if (response.ok) {
+                const item = await response.json();
+                const items =item[0];
+                console.log('i got',item);
+                const itemDetailsContainer = document.getElementById('spec');
+                itemDetailsContainer.innerHTML = `
+                    <h2>${items.name}</h2>
+                    <p>Description: ${items.description}</p>
+                    <p>Price: Rs ${items.price}</p>
+                    <!-- Add other item details here -->
+                `;
+                const ii = items.id;
+                sessionStorage.setItem('itemId',ii);
+            } else {
+                alert('Error fetching it');
+            }
+        } catch (error) {
+            alert('Error fetching item details:', error);
+        }
+    });
+        //chat
+      document.getElementById('openChatBtn').addEventListener('click', function() {
+          document.getElementById('chatPopup').style.display = 'block';
+
+      });
+    //to send message
+    console.log('llll');
+      document.getElementById('chatForm').addEventListener('submit', async(event)=>{
+        
+          event.preventDefault();
+          const messageI = document.getElementById('messageInput');
+          const message = messageI.value;
+          const userId = sessionStorage.getItem('cid');
+          const itemId = sessionStorage.getItem('itemId');
+
+
+          const data ={
+              message: message,
+              userId : userId,
+              itemId : itemId
+          };
+          console.log(data);
+          const dis = `http://localhost:8080/savemsg`;
+          try {
+              const response = await fetch(dis, {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(data)
+              });
+              if (!response.ok) {
+                  throw new Error('Network response was not ok');
+              }
+              else{
+                alert("sent");
+              }
+              messageI.value='';
+          } catch (error) {
+              alert('There has been a problem with your fetch operation:', error);
+          }
+
+      });
+
+    //show previosu messages
+    document.getElementById('openChatBtn').addEventListener('click', async function() {
+        document.getElementById('chatPopup').style.display = 'block';
+
+        try {
+            const userId = sessionStorage.getItem('cid'); 
+            const itemId = sessionStorage.getItem('itemId');
+            
+
+            const chatHistoryUrl = `http://localhost:8080/history?userId=${userId}&itemId=${itemId}`;
+            const response = await fetch(chatHistoryUrl);
+            
+            if (response.ok) {
+                const chatHistory = await response.json();
+                renderChatHistory(chatHistory);
+            } else {
+                throw new Error('Failed to fetch chat history');
+            }
+        } catch (error) {
+            console.error('Error fetching chat history:', error);
+        }
+    });
+
+    function renderChatHistory(chatHistory) {
+        const chatContainer = document.getElementById('chatContainer');
+
+        chatContainer.innerHTML = '';
+
+        chatHistory.forEach(message => {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+        
+            const messageContent = document.createElement('p');
+            messageContent.textContent = message.message; 
+            
+            const userElement = document.createElement('p');
+            userElement.textContent = `User ID: ${message.customerId}`; 
+
+            const timestampElement = document.createElement('p');
+            timestampElement.textContent = `Timestamp: ${message.createdAt}`; 
+
+            messageElement.appendChild(messageContent);
+            messageElement.appendChild(userElement);
+            messageElement.appendChild(timestampElement);
+
+            chatContainer.appendChild(messageElement);
+        });
+    }
+  </script>
+  <!--<script src="connectdb.js"></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
